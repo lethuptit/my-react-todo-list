@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 import SideBarItem from './SidebarItem'
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './sidebar.scss'
 
 const sidebarMap =
