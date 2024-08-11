@@ -1,0 +1,56 @@
+@import '../common.scss';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Sidebar styles
+.sidebar {
+  will-change: contents;
+  transition: transform 0.3s ease;
+  width: clamp(240px, 270px, 300px);
+}
+
+.sidebar-hide {
+  transform: translateX(-100%);
+}
+
+.sidebar-toggler {
+  right: 4px;
+  transition: transform 0.3s ease;
+  will-change: contents;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Specific styling for items
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  will-change: contents;
+
+  @include hover-effect;
+
+  i {
+    margin-right: 8px;
+  }
+
+  .num-of-tasks {
+    margin-left: auto;
+    font-size: 0.6rem;
+  }
+
+  &:active {
+    transform: scale(0.95);    
+  }
+
+}
+
+.active
+{
+  border-bottom: 1px solid $hover-color;
+  color: #ffc107;
+}

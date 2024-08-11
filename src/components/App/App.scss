@@ -1,0 +1,79 @@
+/* // Import all of Bootstrap's CSS and Icons */
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Import Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+
+
+/* // Variables */
+$hover-color: #e2e6ea;
+
+// *{
+//   border: 1px solid red;
+// }
+
+/* // Standards */
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+
+
+main {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+header {
+  background-color: #282c34;
+  text-align: center;
+  color: white;
+  padding: 0.5rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.main-section{
+  min-height:90%
+}
+
+footer{
+  margin: 0;
+  // width: 100%;
+  bottom: 0px;
+  p{
+    font-size: 0.8rem;
+  }
+}
+
+// Main contents styles
+.main-contents {
+  margin-left: clamp(240px, 270px, 300px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.full-width {
+  margin-left: 0;
+  min-width: 100%;
+}
+
+

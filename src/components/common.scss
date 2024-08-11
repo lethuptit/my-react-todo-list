@@ -1,0 +1,70 @@
+// Import all of Bootstrap's CSS and Icons
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Import Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+
+// Variables
+
+$primary-color-dark: black;
+$primary-color-light: #fda603;
+$hover-color: #f8e58e;
+
+@mixin hover-effect {
+  &:hover {
+    background-color: $hover-color;
+    cursor: pointer;
+  }
+}
+
+// Standards
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+@mixin center-horizontally {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
+
+@mixin center-vertically {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+@mixin naked-button {
+  font: inherit;
+  font-weight: 400;
+  background: none;
+  border: 0;
+  color: inherit;
+  outline: inherit;
+  padding: 0;
+  cursor: pointer;
+  transition: background 300ms ease-in-out;
+
+  &:hover {
+    background: #f8f9fa;
+  }
+}
