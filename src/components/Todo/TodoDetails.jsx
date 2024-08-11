@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Modal, Form } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
-import './task.scss'
+import './todo.scss'
 import catagoryList from '../../data/categoryData';
 
 

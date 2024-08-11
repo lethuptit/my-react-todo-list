@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {getVisibleTasks } from '../../utils/utils'
-import "./task.scss"
-import TaskItemView from './TaskView'
+import "./todo.scss"
+import TaskItemView from './TodoItem'
 
 
 

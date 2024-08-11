@@ -1,7 +1,7 @@
 import './App.scss';
 import AddTask from '../Todo/AddTodo';
 import Sidebar from '../Sidebar/Sidebar'
-import TaskListView from '../Todo/TaskListView';
+import TaskListView from '../Todo/TodoList';
 
 
 function App() {

@@ -1,11 +1,11 @@
 import { useContext, useState, useEffect } from 'react';
 import { Accordion, AccordionContext, Card } from 'react-bootstrap';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
-import './task.scss'
+import './todo.scss'
 import { formatDueDate, getPriorityFlagClass, getCategoryEmoji } from '../../utils/utils'
 import { useDispatch, useSelector } from 'react-redux';
-import EditTask from './EditTask';
-import DeleteTask from './DeleteTask';
+import EditTask from './EditTodo';
+import DeleteTask from './DeleteTodo';
 
 function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
