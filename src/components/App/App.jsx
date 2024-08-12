@@ -2,11 +2,20 @@ import './App.scss';
 import AddTask from '../Todo/AddTodo';
 import Sidebar from '../Sidebar/Sidebar'
 import TaskListView from '../Todo/TodoList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 
 function App() {
   const [taskGroup, setTaskGroup] = useState("All Tasks")
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // Get the tasks from the server to display in table
+    dispatch({ type: 'FETCH_TASK_LIST' });
+  },
+    []
+  );
 
   return (
     <main className={"d-flex min-vh-100"}>

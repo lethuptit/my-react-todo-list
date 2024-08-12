@@ -74,7 +74,5 @@ export const trialTasksString = {
   //console.log(myJsonString)
 
 const trialTasks = trialTasksString;
-console.log(trialTasks)
-
 
 export { trialTasks }

@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { Accordion, AccordionContext, Card } from 'react-bootstrap';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
-import './todo.scss'
+import './Todo.scss'
 import { formatDueDate, getPriorityFlagClass, getCategoryEmoji } from '../../utils/utils'
 import { useDispatch, useSelector } from 'react-redux';
 import EditTask from './EditTodo';
@@ -34,10 +34,8 @@ function TaskViewItem({ task }) {
             dispatch({ type: 'UPDATE_TASK', payload: { ...task, status: status } });
     }, [status]);
 
-    const priorityStyle = 'priority-box ' + getPriorityFlagClass(task.priority)
     const handleStatusChange = () => {
-        setStatus(!status);
-       
+        setStatus(!status);       
     }
 
     return (
@@ -49,21 +47,20 @@ function TaskViewItem({ task }) {
                     <Card.Header className={'d-flex justify-content-between align-items-center'}>
                         <div className={'d-flex'}>
                             <h6 className={'fw-bold'}>{task.name}</h6>
-                            <div className={priorityStyle}></div>
+                            <div className={`priority-box ${getPriorityFlagClass(task.priority)}`}></div>
                         </div>
                         <div className={'task-buttons'}>
                             {/* Show task due if task is not completed */}
                             {!task.status && (
-                                <p className={"bg-primary-subtle"}>
+                                <p className={"bg-primary-subtle my-auto"}>
                                     <i className={"bi-alarm h5"} style={{  color: "cornflowerblue" }}></i>&nbsp;
                                     <span>{formatDueDate(task.due)}</span>)
                                 </p>
                             )}
                             {/* Show task done */}
                             {task.status && (
-                                <p className={"bg-primary-subtle text-success"}> <i className={"bi bi-check-square-fill"}></i> Completed </p>
+                                <p className={"bg-primary-subtle text-success my-auto"}> <i className={"bi bi-check-square-fill"}></i> Completed </p>
                             )}
-
 
                             <EditTask task={task} />
                             <DeleteTask task={task} />

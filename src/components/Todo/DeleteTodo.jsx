@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -8,13 +8,6 @@ function DeleteTask({ task }) {
     const dispatch = useDispatch();
     let appStatus = useSelector(state => state.infoApp);
 
-    // useEffect(()=>{
-    //     // If DELETE action is successful, close the form
-    //     if (appStatus.length === 0 || appStatus === '') {
-    //         handleClose();
-    //     }
-    // }, [appStatus])
-
     const requestDelete=()=>{        
         dispatch({ type: 'DELETE_TASK', payload: task });
     }
@@ -22,10 +15,6 @@ function DeleteTask({ task }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch({ type: 'SET_APP_STATUS', payload: 'Requesting' });
-        
-        //testing for acting loading and waiting for updating appStatus
-        // setTimeout(requestDelete,2000)
-
         requestDelete();
         handleClose();
     }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {getVisibleTasks } from '../../utils/utils'
-import "./todo.scss"
+import "./Todo.scss"
 import TaskItemView from './TodoItem'
 
 
@@ -15,12 +15,7 @@ function TaskListView({onGroupChange}) {
   const taskList = useSelector((store) => store.taskList);
   const filter = useSelector((store) => store.showFilter);
 
-  useEffect(() => {
-    // Get the tasks from the server to display in table
-    dispatch({ type: 'FETCH_TASK_LIST' });
-  },
-    [dispatch]
-  );
+  
 
   useEffect(() => {
 

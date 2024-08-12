@@ -2,7 +2,6 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 import {trialTasksString } from '../data/defaultData'
 
-// const baseUrl ="http://localhost:5000";
 const baseUrl = process.env.REACT_APP_SERVER_URL;
  
 const trialTasks = Object.values(trialTasksString);// Local data for testing UI
@@ -20,7 +19,7 @@ function* fetchTasks() {
       yield put({ type: 'SET_TASK_LIST', payload: trialTasks });
     }
 
-    yield put({ type: 'SET_APP_STATUS', payload: '' });//set sucessful status
+    yield put({ type: 'SET_APP_STATUS', payload: '' });//set successful status
 
   } catch (error) {
     console.error('Failed to get task list:', error);

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SideBarItem from './SidebarItem'
 
 import { useDispatch } from 'react-redux';
-import './sidebar.scss'
+import './Sidebar.scss'
 
 const sidebarMap =
   [

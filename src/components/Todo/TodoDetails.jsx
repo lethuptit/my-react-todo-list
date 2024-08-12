@@ -1,29 +1,14 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
-import './todo.scss'
+import './Todo.scss'
 import catagoryList from '../../data/categoryData';
 
 
 function TaskDetailsForm({ taskItem, onSubmitForm, onCloseForm }) {
     const [task, setTask] = useState(taskItem);
     const [isShow, setIsShow] = useState(true)
-    // const [appStatus, setAppStatus] = useState(useSelector(state => state.infoApp))
-    // const dispatch = useDispatch();
-
-    // useEffect(()=>{
-    //     // If action is successful, close the form
-    //     if (appStatus.length === 0 || appStatus === '') {
-    //         handleClose();
-    //     }
-    // }, [appStatus])
-
 
     const handleClose = () => {
-        //Set app status  back to normal
-        // dispatch({
-        //     type: 'SET_APP_STATUS',
-        //     payload:''
-        //   })
         if(onCloseForm)
             onCloseForm()
         
