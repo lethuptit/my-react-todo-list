@@ -8,11 +8,13 @@ To run this application locally, you must first have Node.js installed.
 After downloading the code:
 
 1. Using the command line, go into the application directory
-2. Run `npm install` to install dependencies . 
-3. Run `npm run build` to build the React client application.
-4. Run `npm start` to start the node server. You should see that the server is running locally on port 5000. This will keep the console busy. When finished, you will need to stop the server with CTRL + C. 
 
+2. Run `npm install` to install dependencies . 
+- Run `npm start` to start the node server. You should see that the server is running locally on port 5000. This will keep the console busy. When finished, you will need to stop the server with CTRL + C.
+3. 
+4.  Make sure your server run on http://localhost:4000, change server URL to the.....
 5. Open another command line, go into the application directory.
+Run `npm run build` to build the React client application.
 6. Run `npm run client` to run the application in the browser at [http://localhost:3000/] (as default)
 
 ## Functionality

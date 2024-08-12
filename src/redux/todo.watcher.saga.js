@@ -2,7 +2,8 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 import {trialTasksString } from '../data/defaultData'
 
-const baseUrl ="http://localhost:5000";
+// const baseUrl ="http://localhost:5000";
+const baseUrl = process.env.REACT_APP_SERVER_URL;
  
 const trialTasks = Object.values(trialTasksString);// Local data for testing UI
 const isUseRemotelData = true;// handling use remote data or local data

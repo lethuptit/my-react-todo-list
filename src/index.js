@@ -16,7 +16,7 @@ import showFilter from './redux/showFilter.reducer'
 const sagaMiddleware = createSagaMiddleware();
 
 // Don't include logger in Redux middleware unless in development mode
-const middlewareList = process.env.NODE_ENV === 'development' ?
+const middlewareList = process.env.REACT_APP_NODE_ENV === 'development' ?
   [sagaMiddleware, logger] :
   [sagaMiddleware];
 

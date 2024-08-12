@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
       // console.log(snapshot.val());
       var tasks = Object.values(snapshot.val());
       res.send(tasks)
-      console.log(tasks);
+      // console.log(tasks);
     } else {
       console.log("No data available");
       res.send()
