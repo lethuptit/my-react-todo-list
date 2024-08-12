@@ -16,8 +16,8 @@ function App() {
         </header>
         <section className={'main-section'}>
           <div className={'d-flex justify-content-between align-items-center'}>
-            <h2>My Tasks</h2>
-            <AddTask 111/>
+            <h2>My Tasks Test</h2>
+            <AddTask/>
           </div>
           <TaskListView />
         </section>
