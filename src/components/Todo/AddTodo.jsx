@@ -9,7 +9,8 @@ function AddTask() {
         description: '',
         category: '',
         status: false,
-        priority:'medium'
+        priority:'medium',
+        category:'Home'
     }
 
     const [show, setShow] = useState(false);

@@ -1,6 +1,5 @@
 import { format, add } from "date-fns"
 
-
 export const trialTasksString = {
   "87e1c391-1f35-414c-9567-2efd608079a6":{
       "name": "Trial Task",
@@ -67,7 +66,10 @@ export const trialTasksString = {
       }
     
   };
-
+  
+  //const filename = "sampleData.json"
+  //writeFileSync(filename, myJsonString);
+  
   //var myJsonString = JSON.stringify(trialTasksString);
   //console.log(myJsonString)
 

@@ -23,5 +23,11 @@ app.use('/api/task', taskRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen( PORT, function() {
+  //export sample data
+  const trialTasksString = require('./data/defaultData')
+  const filename = "sampleData.json"
+  var myJsonString = JSON.stringify(trialTasksString);
+  writeFileSync(filename, myJsonString);
+
   console.log(`Server is listening on port ${PORT}...`);
 })

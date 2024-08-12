@@ -34,10 +34,10 @@ function TaskViewItem({ task }) {
             dispatch({ type: 'UPDATE_TASK', payload: { ...task, status: status } });
     }, [status]);
 
-
     const priorityStyle = 'priority-box ' + getPriorityFlagClass(task.priority)
     const handleStatusChange = () => {
         setStatus(!status);
+       
     }
 
     // return (
