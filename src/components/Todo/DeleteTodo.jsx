@@ -41,8 +41,7 @@ function DeleteTask({ task }) {
                 <Modal.Body>
                      {appStatus && <div style={{color:'red'}}>{appStatus}</div>}
                     <div class="modal-body confirmation-message">
-                        Are you sure you want to delete this task? This action cannot be
-                        undone.
+                    This action cannot be undone. Are you sure you want to delete this task? 
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

@@ -2,10 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('./FirebaseConfig')
 
-const { ref, onValue, child, get, set, push, update, remove } = require("firebase/database");
+const { ref, child, get, set, push, update, remove } = require("firebase/database");
 const dbRef = ref(db, "todos/tasks");
-
-// const topUserPostsRef = query(ref(db, 'user-posts/' + myUserId), orderByChild('starCount'));
 
 // Get all tasks
 router.get('/', (req, res) => {
@@ -49,13 +47,13 @@ router.post('/', (req, res) => {
 
   // Check for required values - description & category
   if (task.name == null) {
-    res.sendStatus(500);
+    res.sendStatus(400);
     console.log('Error adding task, name is required.');
     return;
   }
 
   if (task.due == null) {
-    res.sendStatus(500);
+    res.sendStatus(400);
     console.log('Error adding task, due date is required.');
     return;
   }
@@ -101,7 +99,7 @@ router.put('/:id', (req, res) => {
   })
   .catch((error) => {
     // The write failed...
-    console.log('Error updating task: ', err);
+    console.log('Error updating task: ', error);
       res.sendStatus(500);
   });
   

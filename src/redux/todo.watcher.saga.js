@@ -12,7 +12,7 @@ const isUseRemotelData = true;// handling use remote data or local data
 function* fetchTasks() {
   try {
     if(isUseRemotelData){
-      const response = yield axios.get(`${baseUrl}/api/task`);    
+      const response = yield axios.get(`${baseUrl}/api/todos`);    
       yield put({ type: 'SET_TASK_LIST', payload: response.data });      
     }
     else {
@@ -32,7 +32,7 @@ function* fetchTasks() {
 function* addNewTask(action) {
   try {
     if(isUseRemotelData){
-      const response = yield axios.post(`${baseUrl}/api/task/`, action.payload);      
+      const response = yield axios.post(`${baseUrl}/api/todos/`, action.payload);      
     }
     else{
       trialTasks.push(action.payload)
@@ -48,7 +48,7 @@ function* addNewTask(action) {
 function* deleteTask(action) {
   try {
     if(isUseRemotelData){
-      yield axios.delete(`${baseUrl}/api/task/${action.payload.id}`);      
+      yield axios.delete(`${baseUrl}/api/todos/${action.payload.id}`);      
     }
     else{
       trialTasks = trialTasks.filter(task=>task.id!=action.payload.id)
@@ -64,7 +64,7 @@ function* deleteTask(action) {
 function* updateTask(action) {
   try {
     if(isUseRemotelData){
-      const response = yield axios.put(`${baseUrl}/api/task/${action.payload.id}`, action.payload);
+      const response = yield axios.put(`${baseUrl}/api/todos/${action.payload.id}`, action.payload);
       if(response.status){
         yield put({ type: 'FETCH_TASK_LIST', payload: action.payload });
       }

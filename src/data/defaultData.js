@@ -67,9 +67,6 @@ export const trialTasksString = {
     
   };
   
-  //const filename = "sampleData.json"
-  //writeFileSync(filename, myJsonString);
-  
   //var myJsonString = JSON.stringify(trialTasksString);
   //console.log(myJsonString)
 

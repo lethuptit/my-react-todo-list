@@ -19,7 +19,7 @@ app.use(express.static('build'));
 
 //Setup routers
 const taskRouter = require('./modules/taskRouter');
-app.use('/api/task', taskRouter);
+app.use('/api/todos', taskRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen( PORT, function() {
