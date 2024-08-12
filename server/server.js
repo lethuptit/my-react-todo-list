@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
 
-// Add middleware for handling CORS requests from index.html
+// Add middleware for handling CORS requests
 const cors = require('cors');
 app.use(cors());
 
+// Adding middleware for logging
 const morgan = require('morgan')
-// Logging
 app.use(morgan('short'));
 
-
+// Adding middleware for parsing request
 const bodyParser = require('body-parser');
 app.use( bodyParser.urlencoded({extended: true}) );
 app.use( bodyParser.json() );
@@ -23,11 +23,5 @@ app.use('/api/task', taskRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen( PORT, function() {
-  //export sample data
-  const trialTasksString = require('./data/defaultData')
-  const filename = "sampleData.json"
-  var myJsonString = JSON.stringify(trialTasksString);
-  writeFileSync(filename, myJsonString);
-
-  console.log(`Server is listening on port ${PORT}...`);
+    console.log(`Server is listening on port ${PORT}...`);
 })

@@ -42,9 +42,9 @@ All of these actions will interact with the node server which is working on fire
 
 Future features:
 
-- Sort the task
+- Sort the tasks
 - Error handling
-- Improve UI/UX : loading screen when fetching data, showing error in apprpreate place.
+- Improve UI/UX : loading screen when fetching data, showing error in an apprpreate place.
 - Improve performance.
 
 

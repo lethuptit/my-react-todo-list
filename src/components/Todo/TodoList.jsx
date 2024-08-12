@@ -6,7 +6,7 @@ import TaskItemView from './TodoItem'
 
 
 
-function TaskListView() {
+function TaskListView({onGroupChange}) {
 
   const [tasks, setTasks] = useState([]);
 
@@ -23,21 +23,25 @@ function TaskListView() {
   );
 
   useEffect(() => {
-    setTasks(getVisibleTasks(taskList, filter))
+
+    const [filterTilte, filterTasks] = getVisibleTasks(taskList, filter);
+    setTasks(filterTasks);
+    onGroupChange(filterTilte);
+
   }, [taskList, filter]);
 
   return (
     <>      
-      <div className={'container d-flex '}>
-        {/* Show no data */}
-        {tasks.length===0&&(<h4 className={'position-absolute top-50 start-50'}>There is no task.</h4> )}
-
+      <div className={'container d-flex '}>      
         {/* If there is some task, show list of tasks */}
         <ul className={'task-list list-group list-group-flush my-3'}>
           {tasks && tasks.map((t) =>
             (<li key={t.id} className={'list-group-item d-flex task'}> <TaskItemView task={t} /></li>)
           )}
         </ul>
+
+         {/* Show no data */}
+         {tasks&&tasks.length===0&&(<h4 className={'position-absolute top-50 start-50'}>There is no task.</h4> )}
       </div>
     </>
   )

@@ -15,7 +15,7 @@ const sidebarMap =
   ];
 
 const AppSidebar = () => {
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('SHOW_ALL');
   const dispatch = useDispatch();
 
   const getItemClass = (item) => {

@@ -39,7 +39,7 @@ function DeleteTask({ task }) {
 
     return (
         <>
-            <button type="button" className={"btn btn btn-sm"} onClick={handleShow}><span className={"bi bi bi-trash"}></span></button>
+            <button type="button" className={"btn btn btn-sm"} onClick={handleShow}><span className={"bi bi bi-trash h5"}></span></button>
             <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Confirm Delete

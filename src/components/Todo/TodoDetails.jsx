@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Button, Modal, Form } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react'
+import { Button, Modal } from 'react-bootstrap'
 import './todo.scss'
 import catagoryList from '../../data/categoryData';
 
@@ -37,8 +36,8 @@ function TaskDetailsForm({ taskItem, onSubmitForm, onCloseForm }) {
 
         if (addTaskForm.checkValidity()) {
             // dispatch({ type: 'SET_APP_STATUS', payload: 'Requesting' });
-            // setTimeout(()=>onSubmitForm(task),1500)
-            onSubmitForm(task);
+            setTimeout(()=>onSubmitForm(task),0)
+            // onSubmitForm(task);
             handleClose();
            
         } else {
@@ -61,8 +60,8 @@ function TaskDetailsForm({ taskItem, onSubmitForm, onCloseForm }) {
                 </Modal.Header>
                 <Modal.Body>
                     {/* {appStatus&&<div>   <p style={{ color: "red" }}>{appStatus}</p>       </div>} */}
-                    <form noValidate className={"add-task-form "} id='task-form'>
-                        <div className={"form-floating mb-3"}>
+                    <form noValidate className={"add-task-form"} id='task-form'>
+                        <div className={"form-floating input-group-lg mb-3"}>
                             <input
                                 type="text"
                                 className={"form-control"}
@@ -78,12 +77,12 @@ function TaskDetailsForm({ taskItem, onSubmitForm, onCloseForm }) {
                         </div>
                         <div className={"form-floating mb-3"}>
                             <textarea
-                                id="description"
+                                id="description" 
+                                style={{height: "100px"}}
                                 className={"form-control"}
                                 value={task.description}
                                 onChange={(event) => setTask({ ...task, description: event.target.value })}
-                                placeholder="You'll need to apply self-discipline and excellence to be able to get it done"
-                            // style="height: 150px"
+                                placeholder="You'll need to apply self-discipline and excellence to be able to get it done"                                
                             ></textarea>
                             <label htmlFor="description">Description</label>
                         </div>

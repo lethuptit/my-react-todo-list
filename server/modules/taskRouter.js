@@ -5,26 +5,14 @@ const db = require('./FirebaseConfig')
 const { ref, onValue, child, get, set, push, update, remove } = require("firebase/database");
 const dbRef = ref(db, "todos/tasks");
 
-// let chatRef = db.ref("/chats");
-//       chatRef
-//         .orderByChild("uid")
-//         .equalTo(chatId)
-//         .once("value")
-//         .then(function (snapshot) {
-//           snapshot.forEach((childSnapshot) => {
-//             //remove each child
-//             chatRef.child(childSnapshot.key).remove();
-//           });
-//         });
+// const topUserPostsRef = query(ref(db, 'user-posts/' + myUserId), orderByChild('starCount'));
 
 // Get all tasks
 router.get('/', (req, res) => {
   get(dbRef).then((snapshot) => {
     if (snapshot.exists()) {
-      // console.log(snapshot.val());
       var tasks = Object.values(snapshot.val());
       res.send(tasks)
-      // console.log(tasks);
     } else {
       console.log("No data available");
       res.send()
@@ -78,9 +66,9 @@ router.post('/', (req, res) => {
   
   set(child(dbRef,`/${newKey}`),task)
     .then(() => {
-      res.sendStatus(201);
+      res.status(201).send(newKey);
     }).catch((error) => {
-      console.log("Error adding new task", error)
+      console.log("Error in adding new task", error)
       res.sendStatus(500);
     });
 

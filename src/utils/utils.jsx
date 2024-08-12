@@ -93,15 +93,15 @@ export const getVisibleTasks = (taskList, filter) => {
 
   switch (filter) {
     case SHOW_FILTERS.SHOW_ALL:
-      return taskList
+      return ["All Tasks", taskList]
     case SHOW_FILTERS.SHOW_COMPLETED:
-      return taskList.filter(t => t.status)
+      return ["Completed Tasks", taskList.filter(t => t.status)]
     case SHOW_FILTERS.SHOW_ACTIVE:
-      return taskList.filter(t => !t.status)
+      return ["Active Tasks", taskList.filter(t => !t.status)]
     case SHOW_FILTERS.SHOW_WEEK_DUE:
-      return taskList.filter(t => isDueInThisWeek(t.due))
+      return ["This Week Tasks", taskList.filter(t => isDueInThisWeek(t.due))]
     case SHOW_FILTERS.SHOW_OVER_DUE:
-      return taskList.filter(t => (!t.status && isPast(parseISO(t.due)) && (!isToday(parseISO(t.due)))))
+      return ["Overdue Tasks", taskList.filter(t => (!t.status && isPast(parseISO(t.due)) && (!isToday(parseISO(t.due)))))]
     default:
       throw new Error('Unknown filter: ' + filter)
   }
