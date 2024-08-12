@@ -45,6 +45,7 @@ Future features:
 - Sort the task
 - Error handling
 - Improve UI/UX : loading screen when fetching data, showing error in apprpreate place.
+- Improve performance.
 
 
 ## Notes
