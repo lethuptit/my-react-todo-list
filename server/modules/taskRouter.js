@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
   const taskId = req.params.id;
   console.log('Getting task with id', taskId);
 
-  dbRef.get(`tasks/${taskId}`).then((snapshot) => {
+  get(child(dbRef,`/${taskId}`)).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
       res.send(snapshot.val());
