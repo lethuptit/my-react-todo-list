@@ -2,7 +2,8 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 import {trialTasksString } from '../data/defaultData'
 
-const baseUrl = process.env.REACT_APP_SERVER_URL;
+const remoteUrl = 'https://my-node-server.netlify.app/.netlify/functions/api'
+const baseUrl = process.env.REACT_APP_SERVER_URL||remoteUrl;
  
 const trialTasks = Object.values(trialTasksString);// Local data for testing UI
 const isUseRemotelData = true;// handling use remote data or local data
